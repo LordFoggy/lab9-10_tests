@@ -1,0 +1,130 @@
+/* Упрощенная страница политики конфиденциальности */
+.privacy-simple-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.privacy-simple-container {
+    background: #EDEDE3;
+    box-shadow: 4px 4px 9px 2px #725E53;
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.privacy-simple-title {
+    color: #725E53;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.privacy-divider {
+    width: 100px;
+    height: 3px;
+    background: #2D6E45;
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+.privacy-simple-content {
+    color: #725E53;
+    line-height: 1.6;
+}
+
+.privacy-simple-content h2 {
+    color: #2D6E45;
+    font-size: 24px;
+    margin: 25px 0 15px;
+    font-weight: 700;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(45, 110, 69, 0.2);
+}
+
+.privacy-simple-content p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.update-date {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.privacy-simple-content ul {
+    margin: 15px 0 20px 20px;
+    list-style-type: disc;
+}
+
+.privacy-simple-content li {
+    margin-bottom: 8px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.privacy-contact p {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.acceptance-text {
+    text-align: center;
+    font-weight: 600;
+    color: #2D6E45;
+    font-size: 18px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(114, 94, 83, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .privacy-simple-page {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+    
+    .privacy-simple-container {
+        padding: 25px;
+    }
+    
+    .privacy-simple-title {
+        font-size: 26px;
+    }
+    
+    .privacy-simple-content h2 {
+        font-size: 22px;
+    }
+    
+    .privacy-simple-content p,
+    .privacy-simple-content li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-simple-container {
+        padding: 20px;
+    }
+    
+    .privacy-simple-title {
+        font-size: 22px;
+    }
+    
+    .privacy-simple-content h2 {
+        font-size: 20px;
+    }
+    
+    .privacy-contact p {
+        font-size: 15px;
+    }
+    
+    .acceptance-text {
+        font-size: 16px;
+    }
+}

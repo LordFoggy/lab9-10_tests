@@ -1,0 +1,372 @@
+/* Страница каталога */
+.catalog-page {
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+.catalog-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 1200px) {
+    .catalog-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Фильтр */
+.filters-sidebar {
+    background: #EDEDE3;
+    box-shadow: 4px 4px 9px 2px #725E53;
+    border-radius: 10px;
+    padding: 30px;
+    height: fit-content;
+    position: sticky;
+    top: 120px;
+}
+
+.filters-sidebar h3 {
+    color: #725E53;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(114, 94, 83, 0.2);
+}
+
+.filter-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.filter-list li {
+    margin-bottom: 12px;
+}
+
+.filter-list label {
+    display: flex;
+    align-items: center;
+    color: #725E53;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.filter-list label:hover {
+    color: #2D6E45;
+}
+
+.filter-list input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.page-title {
+    color: #725E53;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Панель сортировки */
+.sorting-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.sort-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.sort-button {
+    background: #725E53;
+    color: #EDEDE3;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.sort-button:hover {
+    background: #5c4d43;
+}
+
+.sort-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(114, 94, 83, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.sort-dropdown:hover .sort-dropdown-content {
+    display: block;
+}
+
+.sort-option {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #725E53;
+    font-size: 16px;
+    transition: all 0.3s;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    background: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sort-option:last-child {
+    border-bottom: none;
+}
+
+.sort-option:hover {
+    background: rgba(114, 94, 83, 0.1);
+    color: #2D6E45;
+}
+
+.sort-option.active {
+    background: rgba(45, 110, 69, 0.1);
+    color: #2D6E45;
+    font-weight: 600;
+}
+
+/* Сетка товаров */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Карточки товаров как в index.php */
+.product-card {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.product-image {
+    width: 100%;
+    height: 366px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    color: #725E53;
+    margin-bottom: 15px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.product-name:hover {
+    color: #2D6E45;
+}
+
+.product-weight {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #725E53;
+    font-weight: 300;
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.product-weight span {
+    font-size: 15px;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    position: relative;
+    height: 40px;
+}
+
+.current-price {
+    color: #2D6E45;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.old-price {
+    color: #B4B4B4;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: line-through;
+    position: relative;
+}
+
+.add-to-cart {
+    width: 100%;
+    height: 53px;
+    background: #725E53;
+    border: none;
+    border-radius: 10px;
+    color: #EDEDE3;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: auto;
+}
+
+.add-to-cart:hover {
+    background: #5c4d43;
+}
+
+.add-to-cart:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 5px;
+    color: #725E53;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid #725E53;
+}
+
+.pagination a:hover {
+    background: #725E53;
+    color: white;
+}
+
+.pagination a.active {
+    background: #2D6E45;
+    color: white;
+    border-color: #2D6E45;
+}
+
+/* Сообщение о пустом результате */
+.no-products {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #725E53;
+    font-size: 18px;
+    background: white;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .filters-sidebar {
+        position: static;
+    }
+    
+    .catalog-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-page {
+        padding: 0 15px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .product-image {
+        height: 300px;
+    }
+    
+    .product-name {
+        font-size: 18px;
+        min-height: 50px;
+    }
+    
+    .sort-button {
+        min-width: 160px;
+        font-size: 14px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sorting-bar {
+        justify-content: center;
+    }
+    
+    .filters-sidebar {
+        padding: 20px;
+    }
+    
+    .filters-sidebar h3 {
+        font-size: 18px;
+    }
+    
+    .filter-list label {
+        font-size: 14px;
+    }
+}

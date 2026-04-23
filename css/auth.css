@@ -1,0 +1,481 @@
+/* Стили для страниц авторизации и регистрации */
+body {
+    font-family: 'Inria Sans', sans-serif;
+    background: #EDEDE3;
+    color: #725E53;
+    margin: 0;
+}
+
+.auth-page {
+    min-height: calc(100vh - 104px - 259px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-container {
+    background: #EDEDE3;
+    box-shadow: 4px 4px 6px 2px rgba(114, 94, 83, 0.4);
+    border-radius: 10px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.auth-title {
+    text-align: center;
+    color: #725E53;
+    font-size: 64px;
+    font-weight: 400;
+    margin-top: 100px;
+    
+}
+
+.auth-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form {
+    display: flex;
+    gap: 80px;
+    flex: 1;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-right: 40px;
+}
+
+.form-image {
+    width: 335px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-image img {
+    width: 335px;
+    height: 535px;
+    object-fit: cover;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    color: #725E53;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #2D6E45;
+    border-radius: 5px;
+    background: transparent;
+    font-size: 18px;
+    color: #725E53;
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #725E53;
+    box-shadow: 0 0 0 2px rgba(114, 94, 83, 0.1);
+}
+
+/* Специальные стили для полей ввода */
+.form-input::placeholder {
+    color: rgba(114, 94, 83, 0.5);
+}
+
+/* Линии под полями ввода для соответствия дизайну */
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: #2D6E45;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.form-input:focus + .form-group::after {
+    transform: scaleX(1);
+}
+
+/* Чекбокс */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.checkbox-input {
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    border: 1px solid #725E53;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.checkbox-input:checked {
+    background: #2D6E45;
+    border-color: #2D6E45;
+}
+
+.checkbox-input:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 12px;
+    height: 20px;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+}
+
+.checkbox-label {
+    color: #725E53;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+/* Кнопка */
+.auth-button {
+    width: 223px;
+    height: 46px;
+    background: #725E53;
+    border: none;
+    border-radius: 10px;
+    color: #EDEDE3;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.auth-button:hover {
+    background: #5c4d43;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(114, 94, 83, 0.3);
+}
+
+/* Ссылка */
+.auth-link {
+    margin-top: 40px;
+    color: #725E53;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.auth-link a {
+    color: #2D6E45;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Сообщения об ошибках и успехе */
+.alert {
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .auth-container {
+        width: 95%;
+        max-width: 1000px;
+        padding: 40px;
+    }
+    
+    .auth-form {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .auth-form {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .form-fields {
+        padding-right: 0;
+    }
+    
+    .form-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .form-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-title {
+        font-size: 48px;
+        margin-bottom: 40px;
+    }
+    
+    .auth-container {
+        padding: 30px 20px;
+    }
+    
+    .form-label {
+        font-size: 18px;
+    }
+    
+    .form-input {
+        font-size: 16px;
+        padding: 10px 12px;
+    }
+    
+    .checkbox-label {
+        font-size: 18px;
+    }
+    
+    .auth-link {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-page {
+        padding: 20px 10px;
+    }
+    
+    .auth-title {
+        font-size: 36px;
+        margin-bottom: 30px;
+    }
+    
+    .auth-button {
+        width: 100%;
+        max-width: 223px;
+    }
+    
+    .checkbox-group {
+        align-items: flex-start;
+    }
+    
+    .checkbox-input {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Дополнительные стили для точного соответствия дизайну */
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-label {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    color: #725E53;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.form-input {
+    width: 467px;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1.5px solid #2D6E45;
+    background: transparent;
+    font-size: 18px;
+    color: #725E53;
+    border-radius: 0;
+}
+
+.form-input:focus {
+    outline: none;
+    border-bottom-color: #725E53;
+    box-shadow: none;
+}
+
+/* Чекбокс в регистрации */
+.checkbox-group {
+    position: relative;
+    padding-left: 50px;
+    min-height: 37px;
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.checkbox-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 37px;
+    height: 37px;
+    border: 1px solid #725E53;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.checkbox-input:checked {
+    background: #2D6E45;
+}
+
+.checkbox-input:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 10px;
+    height: 15px;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+}
+
+.checkbox-label {
+    color: #725E53;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Кнопки в точном соответствии с дизайном */
+.auth-button {
+    width: 223px;
+    height: 46px;
+    background: #725E53;
+    border: none;
+    border-radius: 10px;
+    color: #EDEDE3;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.auth-button:hover {
+    background: #5c4d43;
+}
+
+/* Ссылки под кнопками */
+.auth-link {
+    margin-top: 30px;
+    color: #725E53;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.auth-link a {
+    color: #2D6E45;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность для точного дизайна */
+@media (max-width: 1200px) {
+    .form-input {
+        width: 100%;
+        max-width: 467px;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-title {
+        font-size: 48px;
+    }
+    
+    .form-label {
+        font-size: 18px;
+        top: -22px;
+    }
+    
+    .form-input {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+    
+    .checkbox-label {
+        font-size: 18px;
+    }
+    
+    .auth-link {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-container {
+        padding: 30px 20px;
+    }
+    
+    .auth-title {
+        font-size: 36px;
+    }
+    
+    .form-input {
+        width: 100%;
+    }
+    
+    .checkbox-group {
+        padding-left: 45px;
+    }
+    
+    .checkbox-input {
+        width: 30px;
+        height: 30px;
+    }
+}
